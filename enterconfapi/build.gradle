@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    lintOptions{
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation files('libs/Msc.jar')
+    implementation files('libs/Sunflower.jar')
+    implementation files('libs/oss-android-sdk-release.jar')
+    implementation files('libs/okhttp-3.9.1.jar')
+    implementation files('libs/Sunflower.jar')
+    implementation files('libs/gson.jar')
+//    compile fileTree(include: ['*.jar'], dir: 'libs')
+//    testCompile 'junit:junit:4.12'
+//    compile files('libs/Msc.jar')
+//    compile files('libs/Sunflower.jar')
+//    compile files('libs/oss-android-sdk-release.jar')
+//    compile files('libs/okhttp-3.9.1.jar')
+//    compile files('libs/Sunflower.jar')
+//    compile files('libs/gson.jar')
+}

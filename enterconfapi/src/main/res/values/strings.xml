@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EnterConfApi</string>
+	<string name="util_crash_handler_toast_abnormal">很抱歉,程序发生错误,即将退出.</string>
+</resources>

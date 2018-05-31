@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+apply from: 'fat-aar.gradle'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
+    api project(':enterconfapi')
+    implementation project(':myaudio')
+    api project(':myvideo')
+//    compile fileTree(include: ['*.jar'], dir: 'libs')
+//    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+//        exclude group: 'com.android.support', module: 'support-annotations'
+//    })
+//    testCompile 'junit:junit:4.12'
+//    embedded project(':enterconfapi')
+//    embedded project(':myaudio')
+//    embedded project(':myvideo')
+}

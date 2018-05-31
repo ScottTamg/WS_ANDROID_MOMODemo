@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/WS_ANDROID_MOMODemo.iml" filepath="$PROJECT_DIR$/WS_ANDROID_MOMODemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/enterconfapi/enterconfapi.iml" filepath="$PROJECT_DIR$/enterconfapi/enterconfapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myaudio/myaudio.iml" filepath="$PROJECT_DIR$/myaudio/myaudio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myvideo/myvideo.iml" filepath="$PROJECT_DIR$/myvideo/myvideo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wstechapi/wstechapi.iml" filepath="$PROJECT_DIR$/wstechapi/wstechapi.iml" />
+    </modules>
+  </component>
+</project>
