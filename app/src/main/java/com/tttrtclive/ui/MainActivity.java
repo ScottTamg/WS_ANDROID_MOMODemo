@@ -63,11 +63,14 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 
+import project.android.imageprocessing.entity.EffectEnum;
+
 import static com.wushuangtech.library.Constants.CLIENT_ROLE_ANCHOR;
 import static com.wushuangtech.library.Constants.CLIENT_ROLE_BROADCASTER;
 import static com.wushuangtech.library.Constants.VIDEO_PROFILE_120P;
 import static com.wushuangtech.library.Constants.VIDEO_PROFILE_360P;
 import static com.wushuangtech.library.LocalSDKConstants.CAPTURE_REQUEST_CODE;
+import static project.android.imageprocessing.entity.Effect.EFFECT_TYPE_NORMAL;
 
 public class MainActivity extends BaseActivity implements DataInfoShowCallback {
 
@@ -228,9 +231,15 @@ public class MainActivity extends BaseActivity implements DataInfoShowCallback {
 
         findViewById(R.id.main_btn_more).setOnClickListener(v -> {
             mMoreInfoDialog.show();
+            mTTTEngine.openFaceBeavty(true);
+            mTTTEngine.onEffectSelected(EffectEnum.getEffectsByEffectType(EFFECT_TYPE_NORMAL).get(1));
         });
 
-        mLocalMusicListBT.setOnClickListener(v -> mMusicListDialog.show());
+        mLocalMusicListBT.setOnClickListener(v -> {
+            mMusicListDialog.show();
+            mTTTEngine.openFaceBeavty(false);
+            mTTTEngine.onEffectSelected(EffectEnum.getEffectsByEffectType(EFFECT_TYPE_NORMAL).get(2));
+        });
 
         mCannelMusicBT.setOnClickListener(v -> {
             mTTTEngine.stopAudioMixing();

@@ -38,6 +38,7 @@ import com.wushuangtech.library.screenrecorder.EncoderConfig;
 import com.wushuangtech.library.screenrecorder.RecordCallback;
 import com.wushuangtech.library.screenrecorder.ScreenCapture;
 import com.wushuangtech.utils.PviewLog;
+import com.wushuangtech.videocore.LocaSurfaceView;
 import com.wushuangtech.videocore.MyVideoApi;
 import com.wushuangtech.wstechapi.TTTRtcEngine;
 import com.wushuangtech.wstechapi.TTTRtcEngineEventHandler;
@@ -62,6 +63,8 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+
+import project.android.imageprocessing.entity.Effect;
 
 import static com.wushuangtech.api.EnterConfApi.RoomMode;
 import static com.wushuangtech.library.Constants.CHANNEL_PROFILE_COMMUNICATION;
@@ -703,7 +706,7 @@ public class TTTRtcEngineImpl extends TTTRtcEngine implements TTTInterfaceTestCa
             if (isOpenSpeaker) {
                 try {
                     audioManager.setSpeakerphoneOn(true);
-                } catch (Exception e){
+                } catch (Exception e) {
                     PviewLog.d("setEnableSpeakerphone , setSpeakerphoneOn error! ");
                 }
                 mIsSpeakerphoneEnabled = true;
@@ -712,7 +715,7 @@ public class TTTRtcEngineImpl extends TTTRtcEngine implements TTTInterfaceTestCa
             } else {
                 try {
                     audioManager.setSpeakerphoneOn(false);
-                } catch (Exception e){
+                } catch (Exception e) {
                     PviewLog.d("setEnableSpeakerphone , setSpeakerphoneOn error! ");
                 }
                 PviewLog.i("setEnableSpeakerphone audio -> mIsSpeakerphoneEnabled false , headphone!");
@@ -1431,4 +1434,34 @@ public class TTTRtcEngineImpl extends TTTRtcEngine implements TTTInterfaceTestCa
 //        }
 //        return null;
 //    }
+
+    @Override
+    public void openFaceBeavty(boolean flag) {
+        LocaSurfaceView.getInstance().mPreviewInput.openFaceBeauty(flag);
+    }
+
+    @Override
+    public void setBlurLevel(int blurLevel) {
+        LocaSurfaceView.getInstance().mPreviewInput.setBlurLevel(blurLevel);
+    }
+
+    @Override
+    public void setColorLevel(float colorLevel) {
+        LocaSurfaceView.getInstance().mPreviewInput.setColorLevel(colorLevel);
+    }
+
+    @Override
+    public void setCheekThinning(float cheekThinning) {
+        LocaSurfaceView.getInstance().mPreviewInput.setCheekThinning(cheekThinning);
+    }
+
+    @Override
+    public void setEyeEnlarging(float eyeEnlarging) {
+        LocaSurfaceView.getInstance().mPreviewInput.setEyeEnlarging(eyeEnlarging);
+    }
+
+    @Override
+    public void onEffectSelected(Effect effect) {
+        LocaSurfaceView.getInstance().mPreviewInput.createItem(effect);
+    }
 }

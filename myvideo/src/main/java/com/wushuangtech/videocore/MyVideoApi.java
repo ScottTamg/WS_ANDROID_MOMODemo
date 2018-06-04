@@ -172,20 +172,17 @@ public class MyVideoApi implements ExternalVideoModuleCallback {
         }
     }
 
-    public void encodedDualVideoFrame(byte[] videoFrame, ExternalVideoModuleCallback.VideoFrameType frameType, int width, int height,boolean isDualVideo)
-    {
+    public void encodedDualVideoFrame(byte[] videoFrame, ExternalVideoModuleCallback.VideoFrameType frameType, int width, int height, boolean isDualVideo) {
         encodeFrameCount++;
         captureFrameCount++;
         encodeDataSize += videoFrame.length;
         ArrayList<byte[]> h264_nals = new ArrayList<>();
         h264_nals.add(videoFrame);
-        for(WeakReference<VideoSender> videoSender : mVideoSenders)
-        {
-            if (videoSender.get() != null)
-            {
-                if(isDualVideo) {
+        for (WeakReference<VideoSender> videoSender : mVideoSenders) {
+            if (videoSender.get() != null) {
+                if (isDualVideo) {
                     videoSender.get().pushDualEncodedVideoData(h264_nals, frameType, width, height);
-                }else{
+                } else {
                     videoSender.get().pushEncodedVideoData(h264_nals, frameType, width, height);
                 }
             }
@@ -230,15 +227,13 @@ public class MyVideoApi implements ExternalVideoModuleCallback {
         return true;
     }
 
-    public boolean startDualCapture()
-    {
+    public boolean startDualCapture() {
         isCapturing = true;
         LocaSurfaceView.getInstance().setDualBmEncode(true);
         return true;
     }
 
-    public boolean stopDualCapture()
-    {
+    public boolean stopDualCapture() {
         isCapturing = false;
         LocaSurfaceView.getInstance().setDualBmEncode(false);
         return true;

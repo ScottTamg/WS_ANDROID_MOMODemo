@@ -14,6 +14,8 @@ import com.wushuangtech.wstechapi.internal.TTTRtcEngineImpl;
 import com.wushuangtech.wstechapi.model.PublisherConfiguration;
 import com.wushuangtech.wstechapi.model.VideoCanvas;
 
+import project.android.imageprocessing.entity.Effect;
+
 /**
  * SDK主体接口类,执行SDK各种功能
  */
@@ -606,4 +608,36 @@ public abstract class TTTRtcEngine {
      * @return 0代表方法调用成功，其他代表失败。see {@link LocalSDKConstants#FUNCTION_SUCCESS}
      */
     public abstract int setVideoSteamType(long uid, int steamType);
+
+    /**
+     * 打开/关闭美颜
+     * @param flag
+     */
+    public abstract void openFaceBeavty(boolean flag);
+    /**
+     * 磨皮 范围0~6 SDK默认为 6
+     * @param blurLevel
+     */
+    public abstract void setBlurLevel(int blurLevel);
+    /**
+     * 美白 范围0~1 SDK默认为 0.5f
+     * @param colorLevel
+     */
+    public abstract void setColorLevel(float colorLevel);
+    /**
+     * 瘦脸 范围0~1 SDK默认为 0.4f
+     * @param cheekThinning
+     */
+    public abstract void setCheekThinning(float cheekThinning);
+    /**
+     * 大眼 范围0~1 SDK默认为 0.4f
+     * @param eyeEnlarging
+     */
+    public abstract void setEyeEnlarging(float eyeEnlarging);
+
+    /**
+     * 道具贴纸选择
+     * @param effect
+     */
+    public abstract void onEffectSelected(Effect effect);
 }

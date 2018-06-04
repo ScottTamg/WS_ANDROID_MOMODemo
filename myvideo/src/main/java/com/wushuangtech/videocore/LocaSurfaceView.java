@@ -27,7 +27,7 @@ import project.android.imageprocessing.input.ImageResourceInput;
 import project.android.imageprocessing.output.ScreenEndpoint;
 
 
-class LocaSurfaceView implements GLTextureOutputRenderer.FrameAvaliableListener {
+public class LocaSurfaceView implements GLTextureOutputRenderer.FrameAvaliableListener {
     private static LocaSurfaceView locaSurfaceView = null;
 
     private int mIndex = 0;
@@ -37,7 +37,7 @@ class LocaSurfaceView implements GLTextureOutputRenderer.FrameAvaliableListener 
     private MultiInputFilter filter = null;
     ScreenEndpoint mScreen = null;
     private FUBeautifyFilter mBeautifyFilter = null;
-    CameraPreviewInput mPreviewInput = null;
+    public CameraPreviewInput mPreviewInput = null;
     private GLTextureOutputRenderer mWatermark = null;
     WaterMarkPosition mWaterMarkPos = null;
 
