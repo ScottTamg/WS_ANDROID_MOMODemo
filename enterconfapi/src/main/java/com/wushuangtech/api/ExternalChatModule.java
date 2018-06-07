@@ -40,7 +40,7 @@ public class ExternalChatModule {
     public Object handleActionEvent(int actionType, Object... objs) {
         switch (actionType) {
             case TTTChatModuleContants.ACTION_ALIOSS_INIT:
-                initAliOss((Context) objs[0]);
+//                initAliOss((Context) objs[0]);
                 initMediaRecorder((Context) objs[0]);
                 break;
             case TTTChatModuleContants.ACTION_ALIOSS_DOWNLOAD:
