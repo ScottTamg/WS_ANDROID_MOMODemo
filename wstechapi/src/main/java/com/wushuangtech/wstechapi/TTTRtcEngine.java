@@ -613,7 +613,7 @@ public abstract class TTTRtcEngine {
      * 打开/关闭美颜
      * @param flag
      */
-    public abstract void openFaceBeavty(boolean flag);
+    public abstract void openFaceBeauty(boolean flag);
     /**
      * 磨皮 范围0~6 SDK默认为 6
      * @param blurLevel

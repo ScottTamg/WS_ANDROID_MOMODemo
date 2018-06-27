@@ -1436,7 +1436,7 @@ public class TTTRtcEngineImpl extends TTTRtcEngine implements TTTInterfaceTestCa
 //    }
 
     @Override
-    public void openFaceBeavty(boolean flag) {
+    public void openFaceBeauty(boolean flag) {
         LocaSurfaceView.getInstance().mPreviewInput.openFaceBeauty(flag);
     }
 

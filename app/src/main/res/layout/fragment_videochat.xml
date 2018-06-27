@@ -47,10 +47,19 @@
 					android:src="@drawable/mainly_btn_camera_selector"/>
 
 				<ImageView
-					android:id="@+id/main_btn_audio_channel"
+					android:id="@+id/main_btn_meiyan"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_below="@+id/main_btn_camera"
+					android:layout_marginBottom="@dimen/main_btn_com_margin_24"
+					android:layout_marginLeft="@dimen/main_btn_com_margin_20"
+					android:src="@drawable/meiyan"/>
+
+				<ImageView
+					android:id="@+id/main_btn_audio_channel"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/main_btn_meiyan"
 					android:layout_marginBottom="@dimen/main_btn_com_margin_24"
 					android:layout_marginLeft="@dimen/main_btn_com_margin_20"
 					android:layout_marginRight="@dimen/main_btn_com_margin_20"

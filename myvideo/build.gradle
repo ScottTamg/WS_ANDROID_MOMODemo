@@ -11,7 +11,7 @@ android {
         versionName "1.0"
     }
 
-    lintOptions{
+    lintOptions {
         abortOnError false
     }
 }
@@ -21,7 +21,7 @@ dependencies {
     implementation project(':enterconfapi')
     implementation files('libs/nama.jar')
 
-//        compile fileTree(include: ['*.jar'], dir: 'libs')
-//        compile project(':enterconfapi')
+//    compile fileTree(include: ['*.jar'], dir: 'libs')
+//    compile project(':enterconfapi')
 //    compile files('libs/nama.jar')
 }

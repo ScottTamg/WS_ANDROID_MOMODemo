@@ -53,4 +53,10 @@
     <string name="permission_camera">程序需要使用摄像头权限用来音视频通话，否则无法运行。</string>
     <string name="permission_record_audio">程序需要录音权限用来音视频通话，否则无法运行。</string>
     <string name="permission_read_phone_state">程序需要电话监听权限用来音视频通话，否则无法运行。</string>
+    <string name="meiyan">美颜</string>
+    <string name="tiezhi">贴纸</string>
+    <string name="mopi">磨皮</string>
+    <string name="meibai">美白</string>
+    <string name="shoulian">瘦脸</string>
+    <string name="dayan">大眼</string>
 </resources>

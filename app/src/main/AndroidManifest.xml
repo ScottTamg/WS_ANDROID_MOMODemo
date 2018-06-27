@@ -30,6 +30,7 @@
 	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
 	<!-- 电话状态监听权限，动态申请 -->
 	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
 	<supports-screens
 		android:anyDensity="true"
 		android:largeScreens="true"

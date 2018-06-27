@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_root"
+    android:background="@color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp10"
+        android:paddingRight="@dimen/dp10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp15"
+            android:gravity="start|center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_meiyan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp30"
+                android:text="@string/meiyan"
+                android:textColor="@color/title_bar_bg"
+                android:textSize="@dimen/sp12" />
+
+            <TextView
+                android:id="@+id/tv_tiezhi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp30"
+                android:text="@string/tiezhi"
+                android:textColor="@color/color_desc"
+                android:textSize="@dimen/sp12" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp100">
+
+            <LinearLayout
+                android:id="@+id/rl_meiyan"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp30"
+                android:paddingRight="@dimen/dp30">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp0"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mopi"
+                            android:textColor="@color/colorDivider"
+                            android:textSize="@dimen/sp12" />
+
+                        <com.tttrtclive.ui.beauty.seekbar.DiscreteSeekBar
+                            android:id="@+id/mopi_seek_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:dsb_indicatorColor="@color/main_color"
+                            app:dsb_indicatorElevation="0dp"
+                            app:dsb_indicatorPopupEnabled="true"
+                            app:dsb_max="100"
+                            app:dsb_min="0"
+                            app:dsb_progressColor="@color/main_color"
+                            app:dsb_scrubberHeight="@dimen/x4"
+                            app:dsb_thumbSize="@dimen/x32"
+                            app:dsb_value="0" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meibai"
+                            android:textColor="@color/colorDivider"
+                            android:textSize="@dimen/sp12" />
+
+                        <com.tttrtclive.ui.beauty.seekbar.DiscreteSeekBar
+                            android:id="@+id/meibai_seek_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:dsb_indicatorColor="@color/main_color"
+                            app:dsb_indicatorElevation="0dp"
+                            app:dsb_indicatorPopupEnabled="true"
+                            app:dsb_max="100"
+                            app:dsb_min="0"
+                            app:dsb_progressColor="@color/main_color"
+                            app:dsb_scrubberHeight="@dimen/x4"
+                            app:dsb_thumbSize="@dimen/x32"
+                            app:dsb_value="0" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp0"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/shoulian"
+                            android:textColor="@color/colorDivider"
+                            android:textSize="@dimen/sp12" />
+
+                        <com.tttrtclive.ui.beauty.seekbar.DiscreteSeekBar
+                            android:id="@+id/shoulian_seek_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:dsb_indicatorColor="@color/main_color"
+                            app:dsb_indicatorElevation="0dp"
+                            app:dsb_indicatorPopupEnabled="true"
+                            app:dsb_max="100"
+                            app:dsb_min="0"
+                            app:dsb_progressColor="@color/main_color"
+                            app:dsb_scrubberHeight="@dimen/x4"
+                            app:dsb_thumbSize="@dimen/x32"
+                            app:dsb_value="0" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dayan"
+                            android:textColor="@color/colorDivider"
+                            android:textSize="@dimen/sp12" />
+
+                        <com.tttrtclive.ui.beauty.seekbar.DiscreteSeekBar
+                            android:id="@+id/dayan_seek_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:dsb_indicatorColor="@color/main_color"
+                            app:dsb_indicatorElevation="0dp"
+                            app:dsb_indicatorPopupEnabled="true"
+                            app:dsb_max="100"
+                            app:dsb_min="0"
+                            app:dsb_progressColor="@color/main_color"
+                            app:dsb_scrubberHeight="@dimen/x4"
+                            app:dsb_thumbSize="@dimen/x32"
+                            app:dsb_value="0" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_tiezhi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/group_list_gray"
+                android:visibility="invisible">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/filter_recycle_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </RelativeLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

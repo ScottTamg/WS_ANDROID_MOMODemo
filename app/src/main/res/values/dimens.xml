@@ -10,4 +10,15 @@
 	<dimen name="videolayout_btn_com_margin_4">4dp</dimen>
 	<dimen name="videolayout_btn_com_margin_6">6dp</dimen>
 	<dimen name="videolayout_btn_com_margin_8">8dp</dimen>
+    <dimen name="dp10">10dp</dimen>
+	<dimen name="dp15">15dp</dimen>
+	<dimen name="dp30">30dp</dimen>
+	<dimen name="sp12">12sp</dimen>
+	<dimen name="dp100">100dp</dimen>
+	<dimen name="dp0">0dp</dimen>
+    <dimen name="x170">70dp</dimen>
+	<dimen name="x6">6dp</dimen>
+    <dimen name="x140">40dp</dimen>
+    <dimen name="x4">2dp</dimen>
+	<dimen name="x32">8dp</dimen>
 </resources>

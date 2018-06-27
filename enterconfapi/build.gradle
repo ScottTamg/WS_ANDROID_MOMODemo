@@ -26,8 +26,8 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
     implementation files('libs/Msc.jar')
-    implementation files('libs/oss-android-sdk-release.jar')
-    implementation files('libs/okhttp-3.9.1.jar')
+//    implementation files('libs/oss-android-sdk-release.jar')
+//    implementation files('libs/okhttp-3.9.1.jar')
     implementation files('libs/Sunflower.jar')
     implementation files('libs/gson.jar')
 
@@ -35,8 +35,8 @@ dependencies {
 //    testCompile 'junit:junit:4.12'
 //    compile files('libs/Msc.jar')
 //    compile files('libs/Sunflower.jar')
-//    compile files('libs/oss-android-sdk-release.jar')
-//    compile files('libs/okhttp-3.9.1.jar')
+////    compile files('libs/oss-android-sdk-release.jar')
+////    compile files('libs/okhttp-3.9.1.jar')
 //    compile files('libs/Sunflower.jar')
 //    compile files('libs/gson.jar')
 }

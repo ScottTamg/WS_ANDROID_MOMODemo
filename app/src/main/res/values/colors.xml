@@ -16,4 +16,10 @@
 	<color name="ijk_transparent_dark">#77000000</color>
 	<color name="role_selected">#003734</color>
 	<color name="role_un_selected">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="title_bar_bg">#24D4BD</color>
+	<color name="color_desc">#666666</color>
+	<color name="colorDivider">#B6B6B6</color>
+	<color name="group_list_gray">#999999</color>
+    <color name="main_color">#FF61CAF4</color>
 </resources>

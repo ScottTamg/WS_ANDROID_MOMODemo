@@ -18,6 +18,7 @@ import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
@@ -44,6 +45,7 @@ import com.tttrtclive.dialog.MoreInfoDialog;
 import com.tttrtclive.dialog.MusicListDialog;
 import com.tttrtclive.test.TestInterfaceListAdapter;
 import com.tttrtclive.test.TestRelativeLayout;
+import com.tttrtclive.ui.beauty.BeautyPopup;
 import com.tttrtclive.utils.MyLog;
 import com.wushuangtech.api.EnterConfApi;
 import com.wushuangtech.bean.VideoCompositingLayout;
@@ -63,14 +65,10 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 
-import project.android.imageprocessing.entity.EffectEnum;
-
 import static com.wushuangtech.library.Constants.CLIENT_ROLE_ANCHOR;
-import static com.wushuangtech.library.Constants.CLIENT_ROLE_BROADCASTER;
 import static com.wushuangtech.library.Constants.VIDEO_PROFILE_120P;
 import static com.wushuangtech.library.Constants.VIDEO_PROFILE_360P;
 import static com.wushuangtech.library.LocalSDKConstants.CAPTURE_REQUEST_CODE;
-import static project.android.imageprocessing.entity.Effect.EFFECT_TYPE_NORMAL;
 
 public class MainActivity extends BaseActivity implements DataInfoShowCallback {
 
@@ -97,6 +95,7 @@ public class MainActivity extends BaseActivity implements DataInfoShowCallback {
     public ImageView mRecordScreenShare;
     private View mReversalCamera;
     public ScrollView mScrollView;
+    private ImageView mRecordMeiYan;
 
     private MoreInfoDialog mMoreInfoDialog;
     private MusicListDialog mMusicListDialog;
@@ -224,6 +223,8 @@ public class MainActivity extends BaseActivity implements DataInfoShowCallback {
         mScrollView = findViewById(R.id.main_btn_listly);
         mReversalCamera.setOnClickListener(v -> mTTTEngine.switchCamera());
         mTestRelativeLayout = findViewById(R.id.main_test_ly);
+        mRecordMeiYan = findViewById(R.id.main_btn_meiyan);
+        mRecordMeiYan.setOnClickListener(v -> showBeautyPopup());
 
         setTextViewContent(mHourseID, R.string.main_title, String.valueOf(LocalConfig.mLoginRoomID));
 
@@ -231,14 +232,14 @@ public class MainActivity extends BaseActivity implements DataInfoShowCallback {
 
         findViewById(R.id.main_btn_more).setOnClickListener(v -> {
             mMoreInfoDialog.show();
-            mTTTEngine.openFaceBeavty(true);
-            mTTTEngine.onEffectSelected(EffectEnum.getEffectsByEffectType(EFFECT_TYPE_NORMAL).get(1));
+//            mTTTEngine.openFaceBeauty(true);
+//            mTTTEngine.onEffectSelected(EffectEnum.getEffectsByEffectType(EFFECT_TYPE_NORMAL).get(1));
         });
 
         mLocalMusicListBT.setOnClickListener(v -> {
             mMusicListDialog.show();
-            mTTTEngine.openFaceBeavty(false);
-            mTTTEngine.onEffectSelected(EffectEnum.getEffectsByEffectType(EFFECT_TYPE_NORMAL).get(2));
+//            mTTTEngine.openFaceBeauty(false);
+//            mTTTEngine.onEffectSelected(EffectEnum.getEffectsByEffectType(EFFECT_TYPE_NORMAL).get(2));
         });
 
         mCannelMusicBT.setOnClickListener(v -> {
@@ -390,6 +391,8 @@ public class MainActivity extends BaseActivity implements DataInfoShowCallback {
             mTTTEngine.setupLocalVideo(new VideoCanvas(0, Constants.RENDER_MODE_HIDDEN,
                     localSurfaceView), getRequestedOrientation());
             mFullScreenShowView.addView(localSurfaceView, 0);
+            // 打开美颜
+            mTTTEngine.openFaceBeauty(true);
         }
 
         if (LocalConfig.mRole != CLIENT_ROLE_ANCHOR) {
@@ -508,6 +511,30 @@ public class MainActivity extends BaseActivity implements DataInfoShowCallback {
                 next.getValue().getDisplayView().mContentRoot.findViewById(R.id.videoly_video_down).setVisibility(View.INVISIBLE);
                 next.getValue().getDisplayView().mContentRoot.findViewById(R.id.videoly_audio_down).setVisibility(View.INVISIBLE);
             }
+        }
+    }
+
+    protected BeautyPopup mBeautyPopup;
+
+    /**
+     * 显示美颜弹出框
+     */
+    protected void showBeautyPopup() {
+        if (mBeautyPopup == null) {
+            mBeautyPopup = new BeautyPopup(this, mTTTEngine);
+        }
+        if (!mBeautyPopup.isShowing()) {
+            mBeautyPopup.showAtLocation(mFullScreenShowView,
+                    Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+        }
+    }
+
+    /**
+     * 关闭美颜弹出框
+     */
+    protected void closeBeautyPopup() {
+        if (mBeautyPopup != null && mBeautyPopup.isShowing()) {
+            mBeautyPopup.dismiss();
         }
     }
 
