@@ -447,11 +447,6 @@ public class TTTRtcEngineImpl extends TTTRtcEngine implements TTTInterfaceTestCa
             mPushUrl = "";
         }
 
-        // 纯音频模式下才开始低混流视频模式。
-        if (!GlobalConfig.mIsEnableVideoMode) {
-            RoomJni.getInstance().SetRoomLowerVideoMixer(true);
-        }
-
         PviewLog.i(TAG, "joinRealChannel finally mPushUrl : " + mPushUrl);
         if (TextUtils.isEmpty(channelKey)) {
             if (GlobalConfig.mIsEnableVideoMode) {

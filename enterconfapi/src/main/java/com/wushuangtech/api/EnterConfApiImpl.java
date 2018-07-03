@@ -184,7 +184,11 @@ public class EnterConfApiImpl extends EnterConfApi implements ConferenceHelpe {
         }
         PviewLog.d("Room mode , requireChair : " + requireChair + " | createVideomixer : " + createVideomixer);
         RoomJni.getInstance().SetRoomRequireChair(requireChair);
-        RoomJni.getInstance().SetRoomCreateVideoMixer(createVideomixer);
+        if(GlobalConfig.mIsEnableVideoMode && createVideomixer) {
+            RoomJni.getInstance().SetRoomCreateVideoMixer(true);
+        } else {
+            RoomJni.getInstance().SetRoomCreateVideoMixer(false);
+        }
         RoomJni.getInstance().SetUseAudioServerMixer(useServerAudioMixer);
     }
 
