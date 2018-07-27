@@ -615,7 +615,7 @@ public abstract class TTTRtcEngine {
      */
     public abstract void openFaceBeauty(boolean flag);
     /**
-     * 磨皮 范围0~6 SDK默认为 6
+     * 磨皮 范围0~6 SDK默认为 3
      * @param blurLevel
      */
     public abstract void setBlurLevel(int blurLevel);
@@ -625,12 +625,12 @@ public abstract class TTTRtcEngine {
      */
     public abstract void setColorLevel(float colorLevel);
     /**
-     * 瘦脸 范围0~1 SDK默认为 0.4f
+     * 瘦脸 范围0~1 SDK默认为 0.5f
      * @param cheekThinning
      */
     public abstract void setCheekThinning(float cheekThinning);
     /**
-     * 大眼 范围0~1 SDK默认为 0.4f
+     * 大眼 范围0~1 SDK默认为 0.5f
      * @param eyeEnlarging
      */
     public abstract void setEyeEnlarging(float eyeEnlarging);
